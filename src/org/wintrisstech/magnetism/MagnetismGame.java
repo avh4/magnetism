@@ -37,7 +37,15 @@ public class MagnetismGame extends JComponent implements Runnable {
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		drawParticle(g2, 100, 100);
+		drawMagnet(g2, 400, 300);
+	}
 
+	private void drawMagnet(Graphics2D g2, int x, int y) {
+		g2.setStroke(new BasicStroke(10));
+		g2.setColor(new Color(255, 180, 40));
+		g2.drawOval(x - 25, y - 25, 50, 50);
+		g2.setColor(new Color(255, 200, 60));
+		g2.fillOval(x - 25, y - 25, 50, 50);
 	}
 
 	private void drawParticle(Graphics2D g2, int x, int y) {
